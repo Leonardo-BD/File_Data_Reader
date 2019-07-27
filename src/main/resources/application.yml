@@ -17,9 +17,15 @@ logging:
 file-reader-service:
   initial-delay: 5000 #5 seconds
   time-rate: 5000 #5 seconds
+  worst-salesman-by-sallary: false
   paths:
     input: ".\\data\\in\\"
     output: ".\\data\\out\\"
     history: ".\\data\\in\\history\\"
   file:
     extension: ".dat"
+
+tests:
+  files:
+    file-one: ".\\src\\test\\files\\data\\in\\file_one.dat"
+    file-two: ".\\src\\test\\files\\data\\in\\file_two.dat"

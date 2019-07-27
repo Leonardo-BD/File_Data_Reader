@@ -1,5 +1,6 @@
 package com.test.solution.app.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Sale {
@@ -7,11 +8,13 @@ public class Sale {
     private String saleId;
     private List<SaleItem> saleItemList;
     private String salesmanName;
+    private BigDecimal totalValue;
 
-    public Sale(String saleId, List<SaleItem> saleItemList, String salesmanName) {
+    public Sale(String saleId, List<SaleItem> saleItemList, String salesmanName, BigDecimal totalValue) {
         this.saleId = saleId;
         this.saleItemList = saleItemList;
         this.salesmanName = salesmanName;
+        this.totalValue = totalValue;
     }
 
     public String getSaleId() {
@@ -36,5 +39,13 @@ public class Sale {
 
     public void setSalesmanName(String salesmanName) {
         this.salesmanName = salesmanName;
+    }
+
+    public BigDecimal getTotalValue() {
+        return totalValue;
+    }
+
+    public void setTotalValue(BigDecimal totalValue) {
+        this.totalValue = totalValue;
     }
 }

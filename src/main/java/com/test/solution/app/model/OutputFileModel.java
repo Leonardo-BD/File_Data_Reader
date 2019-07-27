@@ -1,5 +1,7 @@
 package com.test.solution.app.model;
 
+import java.util.Objects;
+
 public class OutputFileModel {
 
     private int customerCount;
@@ -44,5 +46,31 @@ public class OutputFileModel {
 
     public void setWorstSeller(String worstSeller) {
         this.worstSeller = worstSeller;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OutputFileModel that = (OutputFileModel) o;
+        return customerCount == that.customerCount &&
+                sellerCount == that.sellerCount &&
+                Objects.equals(higherValueSaleId, that.higherValueSaleId) &&
+                Objects.equals(worstSeller, that.worstSeller);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customerCount, sellerCount, higherValueSaleId, worstSeller);
+    }
+
+    @Override
+    public String toString() {
+        return "OutputFileModel{" +
+                "customerCount=" + customerCount +
+                ", sellerCount=" + sellerCount +
+                ", higherValueSaleId='" + higherValueSaleId + '\'' +
+                ", worstSeller='" + worstSeller + '\'' +
+                '}';
     }
 }
