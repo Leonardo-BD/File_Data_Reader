@@ -1,0 +1,25 @@
+info:
+  app:
+    name: "container"
+    version: "0.0.1.SNAPSHOT"
+    description: "IBM's developer test solution - Leonardo Brum Dorneles"
+
+debug: false
+
+server:
+  port: 8081
+
+logging:
+  file: ".\\logs\\log-application.log"
+  level:
+    ROOT: INFO
+
+file-reader-service:
+  initial-delay: 5000 #5 seconds
+  time-rate: 5000 #5 seconds
+  paths:
+    input: ".\\data\\in\\"
+    output: ".\\data\\out\\"
+    history: ".\\data\\in\\history\\"
+  file:
+    extension: ".dat"
